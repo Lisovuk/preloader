@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Прелоадер для сайта (демо)</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+   body {
+   margin: 0;
+   font-size: 20px;
+   text-align: center;
+}
+
+.preloader {
+   position: fixed;
+   left: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   overflow: hidden;
+   z-index: 2;
+   background: rgb(206, 205, 205);
+}
+
+.preloader__image {
+   position: absolute;
+   top: 50%;
+   left: 52%;
+   width: 200px;
+   height: 200px;
+   margin-top: -100px;
+   margin-left: -100px;
+   border: 15px solid rgb(25, 71, 255);
+   border-top-color: #fbf200;
+   border-radius: 50%;
+   width: 100px;
+   height: 100px;
+   animation: spin 1s ease-in-out infinite;
+}
+
+.loaded .preloader {
+   display: none;
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+      @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+      *{
+         margin: 0px;
+         padding: 0px;
+      }
+
+      body{
+         font-family: 'Exo', sans-serif;
+      }
+
+
+      .context {
+         width: 100%;
+         position: absolute;
+         top:50vh;
+         
+      }
+
+      .context h1{
+         text-align: center;
+         color: #fff;
+         font-size: 60px;
+      }
+
+
+      .area{
+         background: #c09979;  
+         width: 100%;
+         height:100vh;
+      }
+
+      .circles{
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         overflow: hidden;
+      }
+
+      .circles li{
+         position: absolute;
+         display: block;
+         list-style: none;
+         width: 20px;
+         height: 20px;
+         background: rgba(255, 255, 255, 0.2);
+         animation: animate 25s linear infinite;
+         bottom: -150px;
+         
+      }
+
+      .circles li:nth-child(1){
+         left: 25%;
+         width: 80px;
+         height: 80px;
+         animation-delay: 0s;
+      }
+
+
+      .circles li:nth-child(2){
+         left: 10%;
+         width: 20px;
+         height: 20px;
+         animation-delay: 2s;
+         animation-duration: 12s;
+      }
+
+      .circles li:nth-child(3){
+         left: 70%;
+         width: 20px;
+         height: 20px;
+         animation-delay: 4s;
+      }
+
+      .circles li:nth-child(4){
+         left: 40%;
+         width: 60px;
+         height: 60px;
+         animation-delay: 0s;
+         animation-duration: 18s;
+      }
+
+      .circles li:nth-child(5){
+         left: 65%;
+         width: 20px;
+         height: 20px;
+         animation-delay: 0s;
+      }
+
+      .circles li:nth-child(6){
+         left: 75%;
+         width: 110px;
+         height: 110px;
+         animation-delay: 3s;
+      }
+
+      .circles li:nth-child(7){
+         left: 35%;
+         width: 150px;
+         height: 150px;
+         animation-delay: 7s;
+      }
+
+      @keyframes animate {
+
+         0%{
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+         }
+
+         100%{
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
+         }
+
+      }
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+   <div class="preloader">
+      <div class="preloader__image"></div>
+   </div>
+
+   <div class="context">
+      <h1>Hello!</h1>
+  </div>
+
+
+<div class="area" >
+          <ul class="circles">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+          </ul>
+  </div >
+<script>
+
+      $(function() {
+         setTimeout(function() {
+            $('body').addClass('loaded')
+         }, 3000)
+      });
+</script>
+</body>
+</html>
